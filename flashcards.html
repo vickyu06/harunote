@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards | HaruNote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html" class="nav-link back-link">
+        ← Back to vocabulary
+    </a>
+    
+    <h1>Flashcards</h1>
+    <p>Try recalling the meaning before revealing it. </p>
+    <p id="review-progress"></p>
+
+    <section id="flashcard-panel" class="review-card" hidden>
+        <p class="review-label"> What does this word mean?</p>
+
+        <h2 id="flashcard-korean" lang="ko"></h2>
+        <p id="flashcard-meaning" hidden> </p>
+        <div class= "review-actions">
+            <button type = "button" id="reveal-answer">
+                Show meaning
+            </button>
+
+            <button type = "button" id="next-card" class="edit-button">
+                Next word →
+            </button>
+        </div>
+    </section>
+
+    <p id="review-empty" hidden>
+        No vocabulary yet. Add some words to start practising.
+    </p>
+
+    <script src="flashcards.js"></script>
+</body>
+</html>

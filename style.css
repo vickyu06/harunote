@@ -1,0 +1,376 @@
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #faf7f2;
+    color: #343b36;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+h1{
+    color: #41644a;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+p{
+    color: #6b726c;
+    line-height: 1.6;
+}
+
+h2{
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+form{
+    background: #ffffff;
+    padding: 32px;
+    border: 1px solid #e8e9e2;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(52,59,54,0.06);
+}
+
+label{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input, select{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 24px;
+    border: 1px solid #d5dbd2;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input:focus-visible{
+    outline: 3px solid #b9d3af;
+    outline-offset: 2px;
+    border-color: #41644a;
+}
+
+button{
+    background: #41644a;
+    color: #ffffff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #315039;
+}
+
+button:focus-visible{
+    outline: 3px solid #41644a;
+    outline-offset: 3px;
+}
+
+#word-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+}
+
+#word-list li{
+    background: #ffffff;
+    padding: 20px 24px;
+    border: 1px solid #e7e9e2;
+    border-left: 4px solid #41644a;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(52, 59, 54, 0.04);
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+#empty-message {
+    background: #eef3e9;
+    color: #52664b;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#word-list li{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:16px;
+}
+
+#word-list li span{
+    min-width: 0;
+}
+
+.delete-button{
+    background: #fbecea;
+    color: #a33d35;
+}
+
+.delete-button:hover{
+    background: #f5d5d1;
+}
+
+#word-list li[hidden]{
+    display: none;
+}
+
+.word-content{
+    flex:1;
+    min-width: 0;
+}
+
+.word-actions{
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.word-actions button{
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+.edit-button{
+    background: #edf2e9;
+    color: #41644a
+}
+
+.edit-button:hover{
+    background: #dce8d5;
+}
+
+#cancel-edit{
+    background: #edf2e9;
+    color: #41644a;
+    margin-left: 8px;
+}
+
+#cancel-edit:hover{
+    background: #dce8d5
+}
+
+#word-count {
+    display: inline-block;
+    background: #edf2e9;
+    color: #41644a;
+    padding: 4px 12px;
+    margin-left: 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.tag-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.tag{
+    background: #edf2e9;
+    color: #41644a;
+    padding: 3px 10px;
+    border-radius: 999px;  
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.remove-tag{
+    background: transparent;
+    color: inherit;
+    padding: 0 4px;
+    margin-left: 4px;
+    font-size:14px;
+}
+
+.remove-tag:hover{
+    background: #dce8d5;
+}
+
+.tag-picker{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 36px;
+    margin-bottom: 24px;
+}
+
+#selected-tags{
+    margin-top:0;
+}
+
+#add-tag{
+    background: transparent;
+    color: #798078;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#add-tag:hover{
+    background: #edf2e9;
+    color: #41644a;
+}
+
+#tag-popover{
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    width: min(320px, 100%);
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #e7e9e2;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(52, 59, 54, 0.12);
+}
+
+#tag-search{
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+#tag-options {
+    margin-top: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tag-option {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: #343b36;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tag-option:hover {
+    background: #edf2e9;
+}
+
+.nav-link{
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    background: #41644a;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-link:hover{
+    background: #315039;
+}
+
+.nav-link:focus-visible{
+    outline: 3px solid #41644a;
+    outline-offset: 3px;
+}
+
+.back-link{
+    background: #edf2e9;
+    color: #41644a;
+}
+
+.back-link:hover{
+    background: #dce8d5;
+}
+
+.review-card{
+    background:#ffffff;
+    border: 1px solid #e7e9a2;
+    border-radius: 24px;
+    padding: clamp(24px, 5vw, 48px);
+    text-align: center;
+    box-shadow: 0 12px 36px rgba(52, 59, 54, 0.07)
+}
+
+.review-label{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#flashcard-korean{
+    font-size: clamp(36px, 8vw, 64px);
+    margin: 28px 0;
+    overflow-wrap: anywhere;
+}
+
+#flashcard-meaning{
+    color: #41644a;
+    font-size: 24px;
+    overflow-wrap: anywhere;
+}
+
+.review-actions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+#review-progress {
+    color: #6b726c;
+    font-size: 14px;
+}
+
+#review-empty {
+    padding: 32px;
+    background: #edf2e9;
+    border-radius: 16px;
+    text-align: center;
+}
+
+@media (max-width: 600px){
+    body{
+        padding: 32px 16px;
+    }
+
+    h1{
+        font-size: 36px;
+    }
+
+    form{
+        padding: 24px;
+    }
+    
+    #word-list li{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .word-actions{
+        justify-content: flex-end;
+    }
+
+    #vocabulary-form > button{
+        width: 100%;
+    }
+
+    #cancel-edit{
+        margin-left: 0;
+        margin-top: 8px;
+    }
+}

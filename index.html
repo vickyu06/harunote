@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaruNote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HaruNote</h1>
+    <p>A place to collect and practise Korean vocabulary.</p>
+
+    <a href="flashcards.html" class = "nav-link"> 
+        Pracise flashcards →
+    </a> 
+
+    <h2>Add a new word</h2>
+
+    <form id="vocabulary-form">
+        <label for="korean-word">Korean word:</label>
+        <input
+            type="text"
+            id="korean-word"
+            name="korean"
+            placeholder="e.g. 안녕하새요"
+            required
+        >
+        <label for="english-meaning">English meaning:</label>
+        <input
+            type="text"
+            id="english-meaning"
+            name="meaning"
+            placeholder="e.g. Hello"
+            required
+        >
+
+        <label for="add-tag"> Tags (optional):</label>
+       
+        <div class = "tag-picker">
+            <div id="selected-tags" class = "tag-list"></div>
+
+            <button
+                type = "button"
+                id = "add-tag"
+                aria-label = "Add a tag"
+                aria-expanded= "false"
+                aria-controls="tag-popover"
+            >+</button>
+            
+            <div id="tag-popover" hidden>
+                <input
+                    type = "text"
+                    id="tag-search"
+                    placeholder="Find or create a tag"
+                    aria-label="Find or create a tag"
+                    autocomplete="off"
+                    aria-controls="tag-options"
+                >
+                <div id = "tag-options"></div>
+            </div>
+        </div>
+
+        <input type="hidden" id="word-tags" name="tags">
+
+        <button type="submit">Save word</button>
+
+        <button type ="button" id = "cancel-edit" hidden>
+            Cancel editing
+        </button>
+    </form>
+
+    <section>
+        <h2> 
+            My vocabulary
+            <span id="word-count" aria-live="polite"></span>
+        </h2>
+
+        <label for="search-input"> Search your vocabulary:</label>
+        <input
+            type="search"
+            id="search-input"
+            placeholder="Type a Korean word or English meaning"
+        >
+
+        <label for="tag-filter">Filter by tag:</label>
+        <select id="tag-filter">
+            <option value="">All tags</option>
+        </select>
+
+        <button type="button" id="delete-tag" class="delete-button">
+            Delete selected tag
+        </button>
+
+        <p id= "empty-message">
+            Every word is a little progress. Add your first one! 🌱
+        </p>
+
+        <ul id="word-list"></ul>
+
+        <p id ="no-results" hidden>
+            No matching words. Try another search.
+        </p>
+
+    </section>
+    <script src ="script.js"></script>
+
+</body>
+</html>
