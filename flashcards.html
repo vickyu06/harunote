@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards | HaruNote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html" class="nav-link back-link">
+        ← Back to vocabulary
+    </a>
+    
+    <h1>Flashcards</h1>
+    <p>Try recalling the meaning before revealing it. </p>
+
+    <label for="review-tag">Practise:</label>
+    <select id="review-tag">
+        <option value="">All vocabulary</option>
+    </select>
+
+    <p id="review-progress"></p>
+    <p id="review-stats" role="status"></p>
+    <div id="review-complete" role="status" hidden>
+        <div class="completion-mark" aria-hidden="true">
+            ✓
+        </div>
+
+        <h2>Round complete!</h2>
+
+        <p>
+            A little progress, one word at a time.<br>
+            Review the difficult words or start a fresh round.
+        </p>
+    </div>
+
+    <div class="review-toolbar">
+        <button type="button" id="retry-cards" class="edit-button" disabled>
+            Practise difficult words
+        </button>
+
+        <button type="button" id="restart-review" class="edit-button">
+            Start over
+        </button>
+    </div>
+
+    <section id="flashcard-panel" class="review-card" hidden>
+        <p class="review-label"> What does this word mean?</p>
+
+        <h2 id="flashcard-korean" lang="ko"></h2>
+        <p id="flashcard-meaning" hidden> </p>
+        <div class= "review-actions">
+            <button type = "button" id="reveal-answer">
+                Show meaning
+            </button>
+
+            <button type="button" id="shuffle-cards" class="edit-button">
+                Shuffle
+            </button>
+
+            <button type="button" id="speak-card" class="edit-button">
+                🔊Listen
+            </button>
+
+            <button type = "button" id="next-card" class="edit-button">
+                Next word →
+            </button>
+
+        </div>
+
+        <div id = "rating-panel" hidden>
+            <p> Did you remember this word?</p>
+
+            <div class="review-actions">
+                <button type = "button" id = "remembered-card"
+                    aria-label="Remembered" title = "Remembered">
+                    ✓
+                </button>
+
+                <button type ="button" id = "again-card" class="edit-button"
+                    aria-label="Practise again" title = "Practise again">
+                    X
+                </button>
+            </div> 
+        </div>
+
+        <p id="speech-status" role="status"></p>
+    </section>
+
+    <p id="review-empty" hidden>
+        No vocabulary yet. Add some words to start practising.
+    </p>
+
+    <script src="flashcards.js"></script>
+</body>
+</html>
